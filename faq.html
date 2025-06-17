@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الأسئلة الشائعة | ExcellenceQuest</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .faq-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+    }
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+    .faq-question {
+      cursor: pointer;
+      font-weight: bold;
+      color: #004080;
+      display: flex;
+      justify-content: space-between;
+    }
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      color: #444;
+    }
+    .faq-answer.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="assets/img/logo.png" alt="ExcellenceQuest Logo" />
+  <h1 id="page-title">الأسئلة الشائعة</h1>
+  <p id="subtitle">إجابات لأهم استفساراتكم</p>
+</header>
+
+<nav>
+  <a href="index.html" id="nav-home">الرئيسية</a>
+  <a href="about.html" id="nav-about">من نحن</a>
+  <a href="services.html" id="nav-services">الخدمات</a>
+  <a href="self-assessment.html" id="nav-assess">التقييم الذاتي</a>
+  <a href="why-us.html" id="nav-why">لماذا نحن؟</a>
+  <a href="blog.html" id="nav-blog">المدونة</a>
+  <a href="faq.html" id="nav-faq">الأسئلة الشائعة</a>
+  <a href="contact.html" id="nav-contact">اتصل بنا</a>
+  <button id="lang-btn">English</button>
+</nav>
+
+<section class="faq-container">
+  <div class="faq-item">
+    <div class="faq-question">ما هي خدمات ExcellenceQuest؟ <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">نحن نقدم استشارات جودة، اعتماد، تقييم ذاتي، تطوير إداري، وتدريب عن بُعد للمؤسسات الصحية والخدمية.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">هل الاستشارة الأولى مجانية؟ <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">نعم، أول استشارة مجانية لأول 3 عملاء كل شهر.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">هل تدعمون المعايير المحلية مثل OSAHI؟ <i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer">نعم، ندعم OSAHI، CBAHI، وISO، بالإضافة إلى CAP للمختبرات.</div>
+  </div>
+</section>
+
+<footer>
+  © 2025 ExcellenceQuest Consultancy – جميع الحقوق محفوظة
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      answer.classList.toggle('show');
+      q.querySelector('i').classList.toggle('fa-chevron-down');
+      q.querySelector('i').classList.toggle('fa-chevron-up');
+    });
+  });
+
+  // زر اللغة
+  const langBtn = document.getElementById("lang-btn");
+  langBtn.onclick = () => {
+    const isAr = document.documentElement.lang === "ar";
+    window.location.href = isAr ? "faq-en.html" : "faq.html";
+  };
+</script>
+
+</body>
+</html>

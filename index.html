@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">ExcellenceQuest | الصفحة الرئيسية</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+
+  <header>
+    <img src="assets/img/logo.png" alt="ExcellenceQuest Logo" />
+    <h1 id="main-heading">شركة ExcellenceQuest للاستشارات</h1>
+    <p id="sub-heading">التميز المؤسسي يبدأ من هنا</p>
+  </header>
+
+  <div class="top-alert" id="alert-bar">
+    🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!
+  </div>
+
+  <nav>
+    <a href="index.html" id="nav-home">الرئيسية</a>
+    <a href="about.html" id="nav-about">من نحن</a>
+    <a href="services.html" id="nav-services">الخدمات</a>
+    <a href="self-assessment.html" id="nav-assess">التقييم الذاتي</a>
+    <a href="why-us.html" id="nav-why">لماذا نحن؟</a>
+    <a href="blog.html" id="nav-blog">المدونة</a>
+    <a href="contact.html" id="nav-contact">اتصل بنا</a>
+    <button id="lang-btn">English</button>
+  </nav>
+
+  <section>
+    <h2 id="welcome-title">مرحبًا بكم في ExcellenceQuest</h2>
+    <p id="welcome-desc">
+      نحن شركة استشارية متخصصة في الجودة، الاعتماد والتحسين المستمر للمؤسسات الصحية والخدمية عبر حلول احترافية عن بُعد. نسعى لتمكين منشأتكم من تحقيق التميز المؤسسي وفق المعايير الحديثة.
+    </p>
+    <div class="cta">
+      <a href="services.html" id="cta-link">استعرض خدماتنا</a>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h3 id="testimonial-title">آراء عملائنا</h3>
+    <div class="testimonial" id="test-1">"خدمة ممتازة ودعم مستمر حتى بعد الاعتماد. أوصي بشدة بـ ExcellenceQuest."</div>
+    <div class="testimonial" id="test-2">"فريق احترافي ساعدنا على فهم وتطبيق معايير الجودة بكفاءة."</div>
+  </section>
+
+  <section class="booking-form scroll-animate">
+    <h2 id="book-title">احجز استشارتك المجانية الآن</h2>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="الاسم الكامل" required />
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required />
+      <input type="tel" name="phone" placeholder="رقم الهاتف (اختياري)" />
+      <button type="submit" id="book-btn">احجز الآن</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 ExcellenceQuest Consultancy – <span id="rights">جميع الحقوق محفوظة</span>
+    <br />
+    <a href="#">سياسة الخصوصية</a> |
+    <a href="#">خريطة الموقع</a> |
+    <a href="https://wa.me/96890171958" target="_blank"><i class="fab fa-whatsapp"></i> <span id="wa">تواصل واتساب</span></a>
+  </footer>
+
+  <button onclick="topFunction()" id="backToTop" title="العودة للأعلى">↑</button>
+
+  <script>
+    const langData = {
+      ar: {
+        pageTitle: "ExcellenceQuest | الصفحة الرئيسية",
+        mainHeading: "شركة ExcellenceQuest للاستشارات",
+        subHeading: "التميز المؤسسي يبدأ من هنا",
+        alert: "🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!",
+        nav: ["الرئيسية", "من نحن", "الخدمات", "التقييم الذاتي", "لماذا نحن؟", "المدونة", "اتصل بنا"],
+        welcomeTitle: "مرحبًا بكم في ExcellenceQuest",
+        welcomeDesc: "نحن شركة استشارية متخصصة في الجودة، الاعتماد والتحسين المستمر للمؤسسات الصحية والخدمية عبر حلول احترافية عن بُعد. نسعى لتمكين منشأتكم من تحقيق التميز المؤسسي وفق المعايير الحديثة.",
+        cta: "استعرض خدماتنا",
+        testimonialTitle: "آراء عملائنا",
+        test1: "خدمة ممتازة ودعم مستمر حتى بعد الاعتماد. أوصي بشدة بـ ExcellenceQuest.",
+        test2: "فريق احترافي ساعدنا على فهم وتطبيق معايير الجودة بكفاءة.",
+        bookTitle: "احجز استشارتك المجانية الآن",
+        bookBtn: "احجز الآن",
+        rights: "جميع الحقوق محفوظة",
+        wa: "تواصل واتساب",
+        langBtn: "English"
+      },
+      en: {
+        pageTitle: "ExcellenceQuest | Home",
+        mainHeading: "ExcellenceQuest Consultancy",
+        subHeading: "Institutional excellence starts here",
+        alert: "🎉 Free OSAHI consultation for the first 3 clients this month!",
+        nav: ["Home", "About", "Services", "Self Assessment", "Why Us", "Blog", "Contact"],
+        welcomeTitle: "Welcome to ExcellenceQuest",
+        welcomeDesc: "We are a consultancy company specialized in quality, accreditation, and continuous improvement for healthcare and service institutions through remote, professional solutions.",
+        cta: "Explore Our Services",
+        testimonialTitle: "Client Testimonials",
+        test1: "Excellent service and continued support even after accreditation. Highly recommended.",
+        test2: "A professional team that helped us understand and apply quality standards efficiently.",
+        bookTitle: "Book Your Free Consultation Now",
+        bookBtn: "Book Now",
+        rights: "All rights reserved",
+        wa: "WhatsApp Contact",
+        langBtn: "العربية"
+      }
+    };
+
+    let lang = localStorage.getItem("lang") || "ar";
+
+    function switchLanguage() {
+      lang = lang === "ar" ? "en" : "ar";
+      localStorage.setItem("lang", lang);
+      applyLanguage();
+    }
+
+    function applyLanguage() {
+      const d = langData[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.getElementById("page-title").textContent = d.pageTitle;
+      document.getElementById("main-heading").textContent = d.mainHeading;
+      document.getElementById("sub-heading").textContent = d.subHeading;
+      document.getElementById("alert-bar").textContent = d.alert;
+      document.getElementById("nav-home").textContent = d.nav[0];
+      document.getElementById("nav-about").textContent = d.nav[1];
+      document.getElementById("nav-services").textContent = d.nav[2];
+      document.getElementById("nav-assess").textContent = d.nav[3];
+      document.getElementById("nav-why").textContent = d.nav[4];
+      document.getElementById("nav-blog").textContent = d.nav[5];
+      document.getElementById("nav-contact").textContent = d.nav[6];
+      document.getElementById("welcome-title").textContent = d.welcomeTitle;
+      document.getElementById("welcome-desc").textContent = d.welcomeDesc;
+      document.getElementById("cta-link").textContent = d.cta;
+      document.getElementById("testimonial-title").textContent = d.testimonialTitle;
+      document.getElementById("test-1").textContent = d.test1;
+      document.getElementById("test-2").textContent = d.test2;
+      document.getElementById("book-title").textContent = d.bookTitle;
+      document.getElementById("book-btn").textContent = d.bookBtn;
+      document.getElementById("rights").textContent = d.rights;
+      document.getElementById("wa").textContent = d.wa;
+      document.getElementById("lang-btn").textContent = d.langBtn;
+    }
+
+    window.addEventListener("DOMContentLoaded", applyLanguage);
+
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTop");
+      if (btn) {
+        btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
+          ? "block"
+          : "none";
+      }
+    };
+
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>

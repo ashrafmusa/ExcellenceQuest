@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">اتصل بنا | ExcellenceQuest</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <header>
+    <img src="assets/img/logo.png" alt="ExcellenceQuest Logo" />
+    <h1 id="main-title">تواصل معنا</h1>
+    <p id="subtitle">نحن هنا لدعم رحلتك نحو التميز المؤسسي</p>
+  </header>
+
+  <div class="top-alert" id="top-alert">
+    🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!
+  </div>
+
+  <nav>
+    <a href="index.html" id="nav-home">الرئيسية</a>
+    <a href="about.html" id="nav-about">من نحن</a>
+    <a href="services.html" id="nav-services">الخدمات</a>
+    <a href="self-assessment.html" id="nav-assess">التقييم الذاتي</a>
+    <a href="why-us.html" id="nav-why">لماذا نحن؟</a>
+    <a href="blog.html" id="nav-blog">المدونة</a>
+    <a href="contact.html" id="nav-contact">اتصل بنا</a>
+    <button id="lang-btn">English</button>
+  </nav>
+
+  <section>
+    <h2 id="contact-title">بيانات الاتصال</h2>
+    <p><i class="fas fa-phone"></i> +96890171958</p>
+    <p><i class="fas fa-envelope"></i> excellencequestconsultancy@gmail.com</p>
+    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/company/105756513" target="_blank">LinkedIn</a></p>
+    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/96890171958" target="_blank" id="wa-link">راسلنا عبر واتساب</a></p>
+  </section>
+
+  <section>
+    <h2 id="msg-title">أرسل لنا رسالة</h2>
+    <form action="#" method="post">
+      <label for="name" id="label-name">الاسم:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email" id="label-email">البريد الإلكتروني:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message" id="label-message">الرسالة:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" id="send-btn">إرسال</button>
+    </form>
+  </section>
+
+  <section class="booking-form scroll-animate">
+    <h2 id="book-title">احجز استشارتك المجانية الآن</h2>
+    <form action="#" method="post">
+      <input type="text" name="name" id="input-name" placeholder="الاسم الكامل" required />
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required />
+      <input type="tel" name="phone" placeholder="رقم الهاتف (اختياري)" />
+      <button type="submit" id="book-btn">احجز الآن</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 ExcellenceQuest Consultancy – <span id="rights">جميع الحقوق محفوظة</span>
+    <br />
+    <a href="#">سياسة الخصوصية</a> |
+    <a href="#">خريطة الموقع</a> |
+    <a href="https://wa.me/96890171958" target="_blank"><i class="fab fa-whatsapp"></i> <span id="wa">تواصل واتساب</span></a>
+  </footer>
+
+  <button onclick="topFunction()" id="backToTop" title="العودة للأعلى">↑</button>
+
+  <script>
+    const translations = {
+      ar: {
+        title: "اتصل بنا | ExcellenceQuest",
+        main: "تواصل معنا",
+        subtitle: "نحن هنا لدعم رحلتك نحو التميز المؤسسي",
+        nav: ["الرئيسية", "من نحن", "الخدمات", "التقييم الذاتي", "لماذا نحن؟", "المدونة", "اتصل بنا"],
+        alert: "🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!",
+        contactTitle: "بيانات الاتصال",
+        msgTitle: "أرسل لنا رسالة",
+        labelName: "الاسم:",
+        labelEmail: "البريد الإلكتروني:",
+        labelMessage: "الرسالة:",
+        sendBtn: "إرسال",
+        bookTitle: "احجز استشارتك المجانية الآن",
+        bookBtn: "احجز الآن",
+        inputName: "الاسم الكامل",
+        rights: "جميع الحقوق محفوظة",
+        wa: "تواصل واتساب",
+        waLink: "راسلنا عبر واتساب",
+        lang: "English"
+      },
+      en: {
+        title: "Contact Us | ExcellenceQuest",
+        main: "Get in Touch",
+        subtitle: "We’re here to support your excellence journey",
+        nav: ["Home", "About", "Services", "Self Assessment", "Why Us", "Blog", "Contact"],
+        alert: "🎉 Free OSAHI consultancy for the first 3 clients this month!",
+        contactTitle: "Contact Information",
+        msgTitle: "Send Us a Message",
+        labelName: "Name:",
+        labelEmail: "Email:",
+        labelMessage: "Message:",
+        sendBtn: "Send",
+        bookTitle: "Book Your Free Consultation",
+        bookBtn: "Book Now",
+        inputName: "Full Name",
+        rights: "All rights reserved",
+        wa: "WhatsApp Contact",
+        waLink: "Message us on WhatsApp",
+        lang: "العربية"
+      }
+    };
+
+    let lang = localStorage.getItem("lang") || "ar";
+    function applyLang(l) {
+      const t = translations[l];
+      document.documentElement.lang = l;
+      document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
+      document.getElementById("page-title").textContent = t.title;
+      document.getElementById("main-title").textContent = t.main;
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("nav-home").textContent = t.nav[0];
+      document.getElementById("nav-about").textContent = t.nav[1];
+      document.getElementById("nav-services").textContent = t.nav[2];
+      document.getElementById("nav-assess").textContent = t.nav[3];
+      document.getElementById("nav-why").textContent = t.nav[4];
+      document.getElementById("nav-blog").textContent = t.nav[5];
+      document.getElementById("nav-contact").textContent = t.nav[6];
+      document.getElementById("top-alert").textContent = t.alert;
+      document.getElementById("contact-title").textContent = t.contactTitle;
+      document.getElementById("msg-title").textContent = t.msgTitle;
+      document.getElementById("label-name").textContent = t.labelName;
+      document.getElementById("label-email").textContent = t.labelEmail;
+      document.getElementById("label-message").textContent = t.labelMessage;
+      document.getElementById("send-btn").textContent = t.sendBtn;
+      document.getElementById("book-title").textContent = t.bookTitle;
+      document.getElementById("book-btn").textContent = t.bookBtn;
+      document.getElementById("input-name").placeholder = t.inputName;
+      document.getElementById("rights").textContent = t.rights;
+      document.getElementById("wa").textContent = t.wa;
+      document.getElementById("wa-link").textContent = t.waLink;
+      document.getElementById("lang-btn").textContent = t.lang;
+    }
+
+    applyLang(lang);
+    document.getElementById("lang-btn").addEventListener("click", () => {
+      lang = lang === "ar" ? "en" : "ar";
+      localStorage.setItem("lang", lang);
+      applyLang(lang);
+    });
+
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTop");
+      if (btn) {
+        btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
+          ? "block"
+          : "none";
+      }
+    };
+
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>

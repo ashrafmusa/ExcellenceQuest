@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">المدونة | ExcellenceQuest</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .blog-section {
+      padding: 40px 20px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .blog-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .blog-thumb {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 20px;
+    }
+
+    .read-more-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #004080;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .read-more-btn:hover {
+      background-color: #0066cc;
+    }
+
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-in-out;
+    }
+
+    .scroll-animate.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="assets/img/logo.png" alt="ExcellenceQuest Logo" />
+    <h1 id="main-heading">مدونة ExcellenceQuest</h1>
+    <p id="sub-heading">مقالات احترافية في الجودة، الاعتماد، والتحسين المستمر</p>
+  </header>
+
+  <div class="top-alert" id="alert-bar">
+    🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!
+  </div>
+
+  <nav>
+    <a href="index.html" id="nav-home">الرئيسية</a>
+    <a href="about.html" id="nav-about">من نحن</a>
+    <a href="services.html" id="nav-services">الخدمات</a>
+    <a href="self-assessment.html" id="nav-assess">التقييم الذاتي</a>
+    <a href="why-us.html" id="nav-why">لماذا نحن؟</a>
+    <a href="blog.html" id="nav-blog">المدونة</a>
+    <a href="contact.html" id="nav-contact">اتصل بنا</a>
+    <button id="lang-btn" onclick="switchLanguage()">English</button>
+  </nav>
+
+  <section class="blog-section">
+    <h2 id="articles-title">أحدث المقالات</h2>
+
+    <div class="blog-grid">
+
+      <article class="blog-card scroll-animate">
+        <img src="assets/img/blog1.jpg" alt="Blog 1" class="blog-thumb" />
+        <div class="blog-content">
+          <h3 id="blog-1-title">5 خطوات لتأهيل منشأتك للاعتماد الصحي</h3>
+          <p id="blog-1-desc">في هذا المقال نوضح لك الخطوات الأساسية التي تضمن استعداد منشأتك للحصول على الاعتماد المؤسسي وفقًا لمعايير CBAHI,OSAHI وISO.</p>
+          <a href="#" id="blog-1-link" class="read-more-btn">قراءة المزيد</a>
+        </div>
+      </article>
+
+      <article class="blog-card scroll-animate">
+        <img src="assets/img/blog2.jpg" alt="Blog 2" class="blog-thumb" />
+        <div class="blog-content">
+          <h3 id="blog-2-title">كيف تقيّم مؤشرات الأداء الرئيسية (KPIs) في منشأتك؟</h3>
+          <p id="blog-2-desc">تعرّف على أفضل طرق اختيار وتطبيق مؤشرات الأداء لمراقبة التحسين وتحديد الفجوات.</p>
+          <a href="#" id="blog-2-link" class="read-more-btn">قراءة المزيد</a>
+        </div>
+      </article>
+
+      <article class="blog-card scroll-animate">
+        <img src="assets/img/blog3.jpg" alt="Blog 3" class="blog-thumb" />
+        <div class="blog-content">
+          <h3 id="blog-3-title">الفرق بين الاعتماد المؤسسي وإدارة الجودة الشاملة</h3>
+          <p id="blog-3-desc">ما الفرق بين الاعتماد كمشروع مؤقت والجودة كثقافة مستدامة؟ اقرأ التفاصيل.</p>
+          <a href="#" id="blog-3-link" class="read-more-btn">قراءة المزيد</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="booking-form scroll-animate">
+    <h2 id="book-title">احجز استشارتك المجانية الآن</h2>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="الاسم الكامل" required />
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required />
+      <input type="tel" name="phone" placeholder="رقم الهاتف (اختياري)" />
+      <button type="submit" id="book-btn">احجز الآن</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 ExcellenceQuest Consultancy – <span id="rights">جميع الحقوق محفوظة</span>
+    <br />
+    <a href="#">سياسة الخصوصية</a> |
+    <a href="#">خريطة الموقع</a> |
+    <a href="https://wa.me/96890171958" target="_blank"><i class="fab fa-whatsapp"></i> <span id="wa">تواصل واتساب</span></a>
+  </footer>
+
+  <button onclick="topFunction()" id="backToTop" title="العودة للأعلى">↑</button>
+
+  <script>
+    const langData = {
+      ar: {
+        pageTitle: "المدونة | ExcellenceQuest",
+        mainHeading: "مدونة ExcellenceQuest",
+        subHeading: "مقالات احترافية في الجودة، الاعتماد، والتحسين المستمر",
+        alert: "🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!",
+        nav: ["الرئيسية", "من نحن", "الخدمات", "التقييم الذاتي", "لماذا نحن؟", "المدونة", "اتصل بنا"],
+        articlesTitle: "أحدث المقالات",
+        blog1: ["5 خطوات لتأهيل منشأتك للاعتماد الصحي", "في هذا المقال نوضح لك الخطوات الأساسية التي تضمن استعداد منشأتك للحصول على الاعتماد المؤسسي وفقًا لمعايير CBAHI,OSAHI وISO.", "قراءة المزيد"],
+        blog2: ["كيف تقيّم مؤشرات الأداء الرئيسية (KPIs) في منشأتك؟", "تعرّف على أفضل طرق اختيار وتطبيق مؤشرات الأداء لمراقبة التحسين وتحديد الفجوات.", "قراءة المزيد"],
+        blog3: ["الفرق بين الاعتماد المؤسسي وإدارة الجودة الشاملة", "ما الفرق بين الاعتماد كمشروع مؤقت والجودة كثقافة مستدامة؟ اقرأ التفاصيل.", "قراءة المزيد"],
+        bookTitle: "احجز استشارتك المجانية الآن",
+        bookBtn: "احجز الآن",
+        rights: "جميع الحقوق محفوظة",
+        wa: "تواصل واتساب",
+        langBtn: "English"
+      },
+      en: {
+        pageTitle: "Blog | ExcellenceQuest",
+        mainHeading: "ExcellenceQuest Blog",
+        subHeading: "Professional articles on quality, accreditation, and improvement",
+        alert: "🎉 Free OSAHI consultation for the first 3 clients this month!",
+        nav: ["Home", "About", "Services", "Self Assessment", "Why Us", "Blog", "Contact"],
+        articlesTitle: "Latest Articles",
+        blog1: ["5 Steps to Prepare Your Institution for Accreditation", "This article outlines essential steps to help your facility achieve institutional accreditation based on CBAHI, OSAHI, and ISO standards.", "Read More"],
+        blog2: ["How to Evaluate Key Performance Indicators (KPIs)", "Discover best practices to define, apply, and monitor performance indicators effectively.", "Read More"],
+        blog3: ["Accreditation vs. Total Quality Management", "What is the difference between accreditation as a project and quality as a culture? Find out more.", "Read More"],
+        bookTitle: "Book Your Free Consultation Now",
+        bookBtn: "Book Now",
+        rights: "All rights reserved",
+        wa: "WhatsApp Contact",
+        langBtn: "العربية"
+      }
+    };
+
+    let lang = localStorage.getItem("lang") || "ar";
+
+    function switchLanguage() {
+      lang = lang === "ar" ? "en" : "ar";
+      localStorage.setItem("lang", lang);
+      applyLanguage();
+    }
+
+    function applyLanguage() {
+      const d = langData[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.getElementById("page-title").textContent = d.pageTitle;
+      document.getElementById("main-heading").textContent = d.mainHeading;
+      document.getElementById("sub-heading").textContent = d.subHeading;
+      document.getElementById("alert-bar").textContent = d.alert;
+      document.getElementById("nav-home").textContent = d.nav[0];
+      document.getElementById("nav-about").textContent = d.nav[1];
+      document.getElementById("nav-services").textContent = d.nav[2];
+      document.getElementById("nav-assess").textContent = d.nav[3];
+      document.getElementById("nav-why").textContent = d.nav[4];
+      document.getElementById("nav-blog").textContent = d.nav[5];
+      document.getElementById("nav-contact").textContent = d.nav[6];
+      document.getElementById("articles-title").textContent = d.articlesTitle;
+      document.getElementById("blog-1-title").textContent = d.blog1[0];
+      document.getElementById("blog-1-desc").textContent = d.blog1[1];
+      document.getElementById("blog-1-link").textContent = d.blog1[2];
+      document.getElementById("blog-2-title").textContent = d.blog2[0];
+      document.getElementById("blog-2-desc").textContent = d.blog2[1];
+      document.getElementById("blog-2-link").textContent = d.blog2[2];
+      document.getElementById("blog-3-title").textContent = d.blog3[0];
+      document.getElementById("blog-3-desc").textContent = d.blog3[1];
+      document.getElementById("blog-3-link").textContent = d.blog3[2];
+      document.getElementById("book-title").textContent = d.bookTitle;
+      document.getElementById("book-btn").textContent = d.bookBtn;
+      document.getElementById("rights").textContent = d.rights;
+      document.getElementById("wa").textContent = d.wa;
+      document.getElementById("lang-btn").textContent = d.langBtn;
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      applyLanguage();
+      const scrollEls = document.querySelectorAll(".scroll-animate");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("show");
+        });
+      });
+      scrollEls.forEach(el => observer.observe(el));
+    });
+
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTop");
+      if (btn) {
+        btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
+          ? "block"
+          : "none";
+      }
+    };
+
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>

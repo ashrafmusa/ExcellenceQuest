@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">من نحن | ExcellenceQuest</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease-in-out;
+    }
+    .scroll-animate.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="assets/img/logo.png" alt="ExcellenceQuest Logo" />
+    <h1 id="main-title">شركة ExcellenceQuest للاستشارات</h1>
+    <p id="subtitle">نحن شركاؤكم في تحقيق التميز المؤسسي</p>
+  </header>
+
+  <div class="top-alert" id="top-alert">
+    🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!
+  </div>
+
+  <nav>
+    <a href="index.html" id="nav-home">الرئيسية</a>
+    <a href="about.html" id="nav-about">من نحن</a>
+    <a href="services.html" id="nav-services">الخدمات</a>
+    <a href="self-assessment.html" id="nav-assess">التقييم الذاتي</a>
+    <a href="why-us.html" id="nav-why">لماذا نحن؟</a>
+    <a href="blog.html" id="nav-blog">المدونة</a>
+    <a href="contact.html" id="nav-contact">اتصل بنا</a>
+    <button id="lang-btn">English</button>
+  </nav>
+
+  <section class="scroll-animate" id="about-content"></section>
+
+  <section class="booking-form scroll-animate">
+    <h2 id="book-title">احجز استشارتك المجانية الآن</h2>
+    <form>
+      <input type="text" name="name" id="input-name" placeholder="الاسم الكامل" required />
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required />
+      <input type="tel" name="phone" placeholder="رقم الهاتف (اختياري)" />
+      <button type="submit" id="book-btn">احجز الآن</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 ExcellenceQuest Consultancy – <span id="rights">جميع الحقوق محفوظة</span>
+    <br />
+    <a href="#">سياسة الخصوصية</a> |
+    <a href="#">خريطة الموقع</a> |
+    <a href="https://wa.me/96890171958" target="_blank"><i class="fab fa-whatsapp"></i> <span id="wa">تواصل واتساب</span></a>
+  </footer>
+
+  <button onclick="topFunction()" id="backToTop" title="العودة للأعلى">↑</button>
+
+  <script>
+    const translations = {
+      ar: {
+        title: "من نحن | ExcellenceQuest",
+        main: "شركة ExcellenceQuest للاستشارات",
+        subtitle: "نحن شركاؤكم في تحقيق التميز المؤسسي",
+        nav: ["الرئيسية", "من نحن", "الخدمات", "التقييم الذاتي", "لماذا نحن؟", "المدونة", "اتصل بنا"],
+        alert: "🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!",
+        content: `
+          <h2>من نحن</h2>
+          <p>ExcellenceQuest هي شركة استشارات متخصصة في الجودة والاعتماد والتحسين الإداري. نعمل مع المؤسسات الصحية والخدمية لتطوير الأداء، وتطبيق المعايير الدولية، وتحقيق التميز المؤسسي.</p>
+          <p>يتميز فريقنا بخبرة واسعة في الأنظمة المحلية مثل OSAHI، والمعايير العالمية مثل ISO وCAP. نقدم حلولاً مخصصة، تدريب احترافي، واستشارات عن بُعد تلبي احتياجات كل مؤسسة على حدة.</p>
+          <h3>رؤيتنا</h3>
+          <p>أن نكون الخيار الأول في الاستشارات الصحية والإدارية على مستوى الخليج العربي.</p>
+          <h3>رسالتنا</h3>
+          <p>تمكين المؤسسات من التميز والتحسين المستمر من خلال حلول مبتكرة وموثوقة.</p>
+          <h3>قيمنا</h3>
+          <ul>
+            <li><i class="fas fa-star"></i> الجودة والاحتراف</li>
+            <li><i class="fas fa-handshake"></i> الشراكة والثقة</li>
+            <li><i class="fas fa-lightbulb"></i> الابتكار والتحسين</li>
+          </ul>
+        `,
+        bookTitle: "احجز استشارتك المجانية الآن",
+        bookBtn: "احجز الآن",
+        inputName: "الاسم الكامل",
+        rights: "جميع الحقوق محفوظة",
+        whatsapp: "تواصل واتساب",
+        lang: "English"
+      },
+      en: {
+        title: "About Us | ExcellenceQuest",
+        main: "ExcellenceQuest Consultancy",
+        subtitle: "Your Partner in Achieving Institutional Excellence",
+        nav: ["Home", "About Us", "Services", "Self Assessment", "Why Us", "Blog", "Contact"],
+        alert: "🎉 Free OSAHI consultancy for the first 3 clients this month!",
+        content: `
+          <h2>Who We Are</h2>
+          <p>ExcellenceQuest is a consultancy company specializing in quality, accreditation, and administrative improvement. We partner with healthcare and service institutions to enhance performance, implement international standards, and achieve organizational excellence.</p>
+          <p>Our team has extensive experience in local systems such as OSAHI and international standards like ISO and CAP. We offer tailored solutions, professional training, and remote consultancy services to meet each organization's unique needs.</p>
+          <h3>Our Vision</h3>
+          <p>To be the first choice in health and administrative consultancy across the Gulf region.</p>
+          <h3>Our Mission</h3>
+          <p>Empowering institutions to achieve continuous improvement through innovative and reliable solutions.</p>
+          <h3>Our Values</h3>
+          <ul>
+            <li><i class="fas fa-star"></i> Quality & Professionalism</li>
+            <li><i class="fas fa-handshake"></i> Partnership & Trust</li>
+            <li><i class="fas fa-lightbulb"></i> Innovation & Improvement</li>
+          </ul>
+        `,
+        bookTitle: "Book Your Free Consultation",
+        bookBtn: "Book Now",
+        inputName: "Full Name",
+        rights: "All rights reserved",
+        whatsapp: "WhatsApp Contact",
+        lang: "العربية"
+      }
+    };
+
+    let lang = localStorage.getItem("lang") || "ar";
+    function applyLang(l) {
+      const t = translations[l];
+      document.documentElement.lang = l;
+      document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
+      document.getElementById("page-title").textContent = t.title;
+      document.getElementById("main-title").textContent = t.main;
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("nav-home").textContent = t.nav[0];
+      document.getElementById("nav-about").textContent = t.nav[1];
+      document.getElementById("nav-services").textContent = t.nav[2];
+      document.getElementById("nav-assess").textContent = t.nav[3];
+      document.getElementById("nav-why").textContent = t.nav[4];
+      document.getElementById("nav-blog").textContent = t.nav[5];
+      document.getElementById("nav-contact").textContent = t.nav[6];
+      document.getElementById("top-alert").textContent = t.alert;
+      document.getElementById("about-content").innerHTML = t.content;
+      document.getElementById("book-title").textContent = t.bookTitle;
+      document.getElementById("book-btn").textContent = t.bookBtn;
+      document.getElementById("input-name").placeholder = t.inputName;
+      document.getElementById("rights").textContent = t.rights;
+      document.getElementById("wa").textContent = t.whatsapp;
+      document.getElementById("lang-btn").textContent = t.lang;
+    }
+
+    applyLang(lang);
+
+    document.getElementById("lang-btn").addEventListener("click", () => {
+      lang = lang === "ar" ? "en" : "ar";
+      localStorage.setItem("lang", lang);
+      applyLang(lang);
+    });
+
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTop");
+      if (btn) {
+        btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
+          ? "block"
+          : "none";
+      }
+    };
+
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const elements = document.querySelectorAll(".scroll-animate");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("show");
+        });
+      });
+      elements.forEach((el) => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>

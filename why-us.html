@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">لماذا نحن؟ | ExcellenceQuest</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease-in-out;
+    }
+    .scroll-animate.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="assets/img/logo.png" alt="ExcellenceQuest Logo" />
+    <h1 id="main-title">لماذا نحن؟</h1>
+    <p id="subtitle">القيمة التي نقدمها تتجاوز التوقعات</p>
+  </header>
+
+  <div class="top-alert" id="top-alert">🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!</div>
+
+  <nav>
+    <a href="index.html" id="nav-home">الرئيسية</a>
+    <a href="about.html" id="nav-about">من نحن</a>
+    <a href="services.html" id="nav-services">الخدمات</a>
+    <a href="self-assessment.html" id="nav-assess">التقييم الذاتي</a>
+    <a href="why-us.html" id="nav-why">لماذا نحن؟</a>
+    <a href="blog.html" id="nav-blog">المدونة</a>
+    <a href="contact.html" id="nav-contact">اتصل بنا</a>
+    <button id="lang-btn">English</button>
+  </nav>
+
+  <section class="scroll-animate" id="content">
+    <!-- سيتم توليده تلقائيًا عبر JavaScript -->
+  </section>
+
+  <section class="booking-form scroll-animate">
+    <h2 id="book-title">احجز استشارتك المجانية الآن</h2>
+    <form>
+      <input type="text" name="name" id="input-name" placeholder="الاسم الكامل" required />
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required />
+      <input type="tel" name="phone" placeholder="رقم الهاتف (اختياري)" />
+      <button type="submit" id="book-btn">احجز الآن</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 ExcellenceQuest Consultancy – <span id="rights">جميع الحقوق محفوظة</span>
+    <br />
+    <a href="#">سياسة الخصوصية</a> |
+    <a href="#">خريطة الموقع</a> |
+    <a href="https://wa.me/96890171958" target="_blank"><i class="fab fa-whatsapp"></i> <span id="wa">تواصل واتساب</span></a>
+  </footer>
+
+  <button onclick="topFunction()" id="backToTop" title="العودة للأعلى">↑</button>
+
+  <script>
+    const translations = {
+      ar: {
+        title: "لماذا نحن؟ | ExcellenceQuest",
+        main: "لماذا نحن؟",
+        subtitle: "القيمة التي نقدمها تتجاوز التوقعات",
+        nav: ["الرئيسية","من نحن","الخدمات","التقييم الذاتي","لماذا نحن؟","المدونة","اتصل بنا"],
+        alert: "🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!",
+        content: `
+          <h2>ما الذي يجعلنا مختلفين؟</h2>
+          <ul>
+            <li><strong>الاستشارات الثنائية اللغة:</strong> نقدم خدماتنا بالعربية والإنجليزية، عن بُعد وبتكلفة أقل.</li>
+            <li><strong>أدوات ذكية:</strong> نوفر لوحات مؤشرات، أدوات تدقيق، وحاسبات WISN لتحسين الأداء.</li>
+            <li><strong>خبرة مزدوجة:</strong> ندمج بين الاعتماد الصحي والدعم الإداري باحترافية كاملة.</li>
+            <li><strong>تخصص مختبرات:</strong> دعم شامل لمختبرات التحاليل، يشمل CAP وLIS والتحقق.</li>
+            <li><strong>مرونة رقمية:</strong> نقدم خدمات استشارية رقمية قابلة للتخصيص والتوسع حسب الحاجة.</li>
+            <li><strong>تطوير معرفي مستدام:</strong> برامج تدريبية، تقييمات ذاتية، وشهادات مهنية بعد الاستشارة.</li>
+          </ul>
+          <p>في ExcellenceQuest، نحن لا نمنحك حلاً مؤقتًا، بل شراكة طويلة المدى لتحقيق التميز المؤسسي.</p>
+        `,
+        bookTitle: "احجز استشارتك المجانية الآن",
+        bookBtn: "احجز الآن",
+        inputName: "الاسم الكامل",
+        rights: "جميع الحقوق محفوظة",
+        whatsapp: "تواصل واتساب",
+        lang: "English"
+      },
+      en: {
+        title: "Why Us | ExcellenceQuest",
+        main: "Why Us?",
+        subtitle: "The value we offer exceeds expectations",
+        nav: ["Home","About","Services","Self Assessment","Why Us","Blog","Contact"],
+        alert: "🎉 Free OSAHI consultancy for the first 3 clients this month!",
+        content: `
+          <h2>What Makes Us Different?</h2>
+          <ul>
+            <li><strong>Bilingual Consulting:</strong> We serve in Arabic & English, remotely & cost-effectively.</li>
+            <li><strong>Smart Tools:</strong> We offer dashboards, audits, and WISN calculators for performance.</li>
+            <li><strong>Dual Expertise:</strong> We combine health accreditation with admin excellence.</li>
+            <li><strong>Lab Specialization:</strong> CAP, LIS, and verification support tailored for labs.</li>
+            <li><strong>Digital Flexibility:</strong> Our services are customizable and scalable.</li>
+            <li><strong>Sustainable Knowledge:</strong> Training, self-assessment, and post-consultation certification.</li>
+          </ul>
+          <p>At ExcellenceQuest, we don’t offer temporary fixes — we build lasting partnerships toward excellence.</p>
+        `,
+        bookTitle: "Book Your Free Consultation",
+        bookBtn: "Book Now",
+        inputName: "Full Name",
+        rights: "All rights reserved",
+        whatsapp: "WhatsApp Contact",
+        lang: "العربية"
+      }
+    };
+
+    let lang = localStorage.getItem("lang") || "ar";
+    function applyLang(l) {
+      const t = translations[l];
+      document.documentElement.lang = l;
+      document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
+      document.getElementById("page-title").textContent = t.title;
+      document.getElementById("main-title").textContent = t.main;
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("nav-home").textContent = t.nav[0];
+      document.getElementById("nav-about").textContent = t.nav[1];
+      document.getElementById("nav-services").textContent = t.nav[2];
+      document.getElementById("nav-assess").textContent = t.nav[3];
+      document.getElementById("nav-why").textContent = t.nav[4];
+      document.getElementById("nav-blog").textContent = t.nav[5];
+      document.getElementById("nav-contact").textContent = t.nav[6];
+      document.getElementById("top-alert").textContent = t.alert;
+      document.getElementById("content").innerHTML = t.content;
+      document.getElementById("book-title").textContent = t.bookTitle;
+      document.getElementById("book-btn").textContent = t.bookBtn;
+      document.getElementById("input-name").placeholder = t.inputName;
+      document.getElementById("rights").textContent = t.rights;
+      document.getElementById("wa").textContent = t.whatsapp;
+      document.getElementById("lang-btn").textContent = t.lang;
+    }
+
+    applyLang(lang);
+
+    document.getElementById("lang-btn").addEventListener("click", () => {
+      lang = lang === "ar" ? "en" : "ar";
+      localStorage.setItem("lang", lang);
+      applyLang(lang);
+    });
+
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTop");
+      if (!btn) return;
+      btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
+        ? "block"
+        : "none";
+    };
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const elements = document.querySelectorAll(".scroll-animate");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("show");
+        });
+      });
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>

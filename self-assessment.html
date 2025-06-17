@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">نموذج التقييم الذاتي | ExcellenceQuest</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .assessment-form {
+      background-color: #ffffff;
+      padding: 30px;
+      margin: 40px auto;
+      border-radius: 10px;
+      max-width: 800px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .assessment-form h2 {
+      text-align: center;
+      color: #1F4E79;
+      margin-bottom: 20px;
+    }
+    .assessment-form label {
+      font-weight: bold;
+      display: block;
+      margin: 20px 0 10px;
+    }
+    .assessment-form select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .assessment-form button {
+      background-color: #004080;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+    }
+    .assessment-form button:hover {
+      background-color: #0066cc;
+    }
+    .result-box {
+      background-color: #f0f8ff;
+      border: 1px dashed #1F4E79;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="assets/img/logo.png" alt="ExcellenceQuest Logo" />
+    <h1 id="main-title">نموذج التقييم الذاتي للمؤسسات</h1>
+    <p id="subtitle">قيّم مدى جاهزية مؤسستك للاعتماد والتحسين المؤسسي</p>
+  </header>
+
+  <nav>
+    <a href="index.html" id="nav-home">الرئيسية</a>
+    <a href="about.html" id="nav-about">من نحن</a>
+    <a href="services.html" id="nav-services">الخدمات</a>
+    <a href="why-us.html" id="nav-why">لماذا نحن؟</a>
+    <a href="blog.html" id="nav-blog">المدونة</a>
+    <a href="contact.html" id="nav-contact">اتصل بنا</a>
+    <button id="lang-btn">English</button>
+  </nav>
+
+  <section class="assessment-form">
+    <h2 id="form-title">نموذج التقييم الذاتي</h2>
+    <form id="selfAssessmentForm">
+      <label for="leadership" id="label-leadership">القيادة والإدارة:</label>
+      <select name="leadership" id="leadership"></select>
+
+      <label for="quality" id="label-quality">إدارة الجودة والسلامة:</label>
+      <select name="quality" id="quality"></select>
+
+      <label for="risk" id="label-risk">تحليل وإدارة المخاطر:</label>
+      <select name="risk" id="risk"></select>
+
+      <label for="staff" id="label-staff">تدريب وتقييم الموظفين:</label>
+      <select name="staff" id="staff"></select>
+
+      <button type="submit" id="submit-btn">احسب التقييم</button>
+    </form>
+    <div id="result" class="result-box" style="display: none;"></div>
+  </section>
+
+  <footer>
+    © 2025 ExcellenceQuest Consultancy – <span id="rights">جميع الحقوق محفوظة</span>
+  </footer>
+
+  <script>
+    const translations = {
+      ar: {
+        title: "نموذج التقييم الذاتي | ExcellenceQuest",
+        page: "نموذج التقييم الذاتي للمؤسسات",
+        subtitle: "قيّم مدى جاهزية مؤسستك للاعتماد والتحسين المؤسسي",
+        nav: ["الرئيسية","من نحن","الخدمات","لماذا نحن؟","المدونة","اتصل بنا"],
+        formTitle: "نموذج التقييم الذاتي",
+        labels: ["القيادة والإدارة:","إدارة الجودة والسلامة:","تحليل وإدارة المخاطر:","تدريب وتقييم الموظفين:"],
+        options: ["لا يتم تطبيق أي ممارسات","مستوى بدائي","مستوى متوسط","مستوى متقدم"],
+        button: "احسب التقييم",
+        results: [
+          "🔴 مستوى الاستعداد منخفض جدًا. يُوصى بإجراء تدخل عاجل.",
+          "🟠 المؤسسة في مرحلة تأسيسية. بحاجة لتخطيط وتحسين.",
+          "🟡 المؤسسة على الطريق. مطلوب دعم متخصص لتسريع التطوير.",
+          "🟢 المؤسسة جاهزة للاعتماد أو قريبة جدًا من تحقيقه!"
+        ],
+        rights: "جميع الحقوق محفوظة",
+        lang: "English"
+      },
+      en: {
+        title: "Self Assessment | ExcellenceQuest",
+        page: "Institutional Self-Assessment",
+        subtitle: "Evaluate your institution's readiness for accreditation and improvement",
+        nav: ["Home","About","Services","Why Us","Blog","Contact"],
+        formTitle: "Self-Assessment Form",
+        labels: ["Leadership & Management:","Quality & Safety Management:","Risk Management:","Staff Training & Evaluation:"],
+        options: ["No practices implemented","Basic level","Intermediate level","Advanced level"],
+        button: "Calculate Score",
+        results: [
+          "🔴 Very low readiness. Immediate action is required.",
+          "🟠 Initial stage. Planning and improvement needed.",
+          "🟡 On track. Expert support is recommended.",
+          "🟢 Excellent readiness. Your institution is close to accreditation!"
+        ],
+        rights: "All rights reserved",
+        lang: "العربية"
+      }
+    };
+
+    let currentLang = localStorage.getItem("lang") || "ar";
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem("lang", lang);
+      const t = translations[lang];
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.getElementById("page-title").innerText = t.title;
+      document.getElementById("main-title").innerText = t.page;
+      document.getElementById("subtitle").innerText = t.subtitle;
+      document.getElementById("nav-home").innerText = t.nav[0];
+      document.getElementById("nav-about").innerText = t.nav[1];
+      document.getElementById("nav-services").innerText = t.nav[2];
+      document.getElementById("nav-why").innerText = t.nav[3];
+      document.getElementById("nav-blog").innerText = t.nav[4];
+      document.getElementById("nav-contact").innerText = t.nav[5];
+      document.getElementById("form-title").innerText = t.formTitle;
+
+      const labels = ["leadership","quality","risk","staff"];
+      labels.forEach((id, i) => {
+        document.getElementById("label-" + id).innerText = t.labels[i];
+        const select = document.getElementById(id);
+        select.innerHTML = "";
+        t.options.forEach((opt, index) => {
+          const option = document.createElement("option");
+          option.value = index;
+          option.textContent = opt;
+          select.appendChild(option);
+        });
+      });
+
+      document.getElementById("submit-btn").innerText = t.button;
+      document.getElementById("rights").innerText = t.rights;
+      document.getElementById("lang-btn").innerText = t.lang;
+    }
+
+    document.getElementById("lang-btn").addEventListener("click", () => {
+      const newLang = currentLang === "ar" ? "en" : "ar";
+      setLang(newLang);
+    });
+
+    setLang(currentLang);
+
+    document.getElementById("selfAssessmentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const fields = ["leadership", "quality", "risk", "staff"];
+      let total = 0;
+      fields.forEach(id => {
+        total += parseInt(document.getElementById(id).value);
+      });
+      const msgIndex = total <= 4 ? 0 : total <= 7 ? 1 : total <= 10 ? 2 : 3;
+      const msg = translations[currentLang].results[msgIndex];
+      const resultBox = document.getElementById("result");
+      resultBox.textContent = msg;
+      resultBox.style.display = "block";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تفاصيل المقال | ExcellenceQuest</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="post-title"></h1>
+    <p id="post-date" style="color:gray;"></p>
+    <div id="post-content"></div>
+    <a href="blog.html">← العودة للمدونة</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    fetch(`data/posts/${id}.json`)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("post-title").textContent = data.title;
+        document.getElementById("post-date").textContent = data.date;
+        document.getElementById("post-content").innerHTML = data.content;
+      })
+      .catch(() => {
+        document.body.innerHTML = "<h2>المقال غير موجود</h2><a href='blog.html'>العودة</a>";
+      });
+  </script>
+</body>
+</html>

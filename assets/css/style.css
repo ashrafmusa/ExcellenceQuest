@@ -1,0 +1,236 @@
+/* === الأساسيات العامة === */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #1F4E79;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 180px;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+/* === الترويسة === */
+header {
+  background-color: #1F4E79;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* === الشريط العلوي === */
+nav {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+nav a {
+  color: #1F4E79;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: goldenrod;
+}
+
+#lang-btn {
+  padding: 6px 12px;
+  background-color: #004080;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+#lang-btn:hover {
+  background-color: #0066cc;
+}
+
+/* === شريط التنبيه العلوي === */
+.top-alert {
+  background-color: #ffcc00;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+/* === الأقسام === */
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.service {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.service h3 i {
+  margin-left: 0.5rem;
+  color: goldenrod;
+}
+
+/* === نموذج الاتصال === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+input, textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+button[type="submit"] {
+  background-color: goldenrod;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button[type="submit"]:hover {
+  background-color: #c29600;
+}
+
+/* === نموذج حجز استشارة === */
+.booking-form {
+  background-color: #f0f4ff;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+}
+.booking-form input {
+  padding: 10px;
+  margin: 10px;
+  width: 80%;
+  max-width: 400px;
+}
+.booking-form button {
+  padding: 10px 20px;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.booking-form button:hover {
+  background-color: #0066cc;
+}
+
+/* === آراء العملاء === */
+.testimonials {
+  background-color: #fff8e1;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+.testimonial {
+  font-style: italic;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #ccc;
+}
+
+/* === زر العودة للأعلى === */
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  z-index: 99;
+  font-size: 22px;
+  border: none;
+  background-color: #004080;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+#backToTop:hover {
+  background-color: #0066cc;
+}
+
+/* === تأثيرات الظهور === */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease-in-out;
+}
+.scroll-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === الفوتر === */
+footer {
+  text-align: center;
+  background: #1F4E79;
+  color: white;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+footer a {
+  color: gold;
+  margin: 0 5px;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+.header-logo-section {
+  background: linear-gradient(to right, #004080, #007acc);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.site-logo {
+  max-height: 80px;
+  width: auto;
+}
+
+.logo-text h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.logo-text p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
