@@ -1,31 +1,114 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>تفاصيل المقال | ExcellenceQuest</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">تفاصيل المقال | ExcellenceQuest</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .post-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .post-container h1 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+    .post-container .meta {
+      color: gray;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .post-container .content {
+      line-height: 1.8;
+      color: #333;
+    }
+    .back-link {
+      display: block;
+      margin: 30px auto;
+      text-align: center;
+      color: #004080;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1 id="post-title"></h1>
-    <p id="post-date" style="color:gray;"></p>
-    <div id="post-content"></div>
-    <a href="blog.html">← العودة للمدونة</a>
-  </div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
-    fetch(`data/posts/${id}.json`)
+<header>
+  <img src="assets/img/logo.png" alt="ExcellenceQuest Logo" />
+  <h1 id="main-title">تفاصيل المقال</h1>
+  <p id="subtitle">مقال من المدونة</p>
+</header>
+
+<nav>
+  <a href="index.html" id="nav-home">الرئيسية</a>
+  <a href="about.html" id="nav-about">من نحن</a>
+  <a href="services.html" id="nav-services">الخدمات</a>
+  <a href="self-assessment.html" id="nav-assess">التقييم الذاتي</a>
+  <a href="why-us.html" id="nav-why">لماذا نحن؟</a>
+  <a href="blog.html" id="nav-blog">المدونة</a>
+  <a href="contact.html" id="nav-contact">اتصل بنا</a>
+  <button id="lang-btn">English</button>
+</nav>
+
+<section class="post-container">
+  <h1 id="post-title">...</h1>
+  <div class="meta" id="post-date">...</div>
+  <div class="content" id="post-content">...</div>
+  <a href="blog.html" class="back-link" id="back-link">← العودة للمدونة</a>
+</section>
+
+<footer>
+  © 2025 ExcellenceQuest Consultancy – <span id="rights">جميع الحقوق محفوظة</span>
+  <br />
+  <a href="#">سياسة الخصوصية</a> |
+  <a href="#">خريطة الموقع</a> |
+  <a href="https://wa.me/96890171958" target="_blank"><i class="fab fa-whatsapp"></i> <span id="wa">تواصل واتساب</span></a>
+</footer>
+
+<a href="https://wa.me/96890171958" id="whatsapp-float" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" id="backToTop" title="العودة للأعلى">↑</button>
+
+<script>
+  const lang = localStorage.getItem("lang") || "ar";
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  document.getElementById("lang-btn").textContent = lang === "ar" ? "English" : "العربية";
+  document.getElementById("main-title").textContent = lang === "ar" ? "تفاصيل المقال" : "Post Details";
+  document.getElementById("subtitle").textContent = lang === "ar" ? "مقال من المدونة" : "Blog Article";
+  document.getElementById("back-link").textContent = lang === "ar" ? "← العودة للمدونة" : "← Back to Blog";
+  document.getElementById("rights").textContent = lang === "ar" ? "جميع الحقوق محفوظة" : "All rights reserved";
+  document.getElementById("wa").textContent = lang === "ar" ? "تواصل واتساب" : "WhatsApp Contact";
+
+  document.getElementById("lang-btn").onclick = () => {
+    const newLang = lang === "ar" ? "en" : "ar";
+    localStorage.setItem("lang", newLang);
+    location.reload();
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const postId = params.get("id");
+  if (!postId) {
+    document.getElementById("post-content").innerHTML = lang === "ar" ? "<p>المقال غير محدد</p>" : "<p>Post not specified</p>";
+  } else {
+    fetch(`data/posts/${postId}.json`)
       .then(res => res.json())
       .then(data => {
-        document.getElementById("post-title").textContent = data.title;
+        document.title = data.title[lang] + " | ExcellenceQuest";
+        document.getElementById("post-title").textContent = data.title[lang];
         document.getElementById("post-date").textContent = data.date;
-        document.getElementById("post-content").innerHTML = data.content;
+        document.getElementById("post-content").innerHTML = data.content[lang];
       })
       .catch(() => {
-        document.body.innerHTML = "<h2>المقال غير موجود</h2><a href='blog.html'>العودة</a>";
+        document.getElementById("post-content").innerHTML = lang === "ar" ? "<p>المقال غير موجود</p>" : "<p>Post not found</p>";
       });
-  </script>
+  }
+</script>
+
 </body>
 </html>

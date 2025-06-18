@@ -7,6 +7,88 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    body { background: #f5f8fc; margin: 0; font-family: Arial, sans-serif; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0; }
+    header h1 { color: #004080; margin-top: 10px; font-size: 24px; }
+    header p { color: #333; font-size: 16px; }
+    .top-alert {
+      background: #fff3cd;
+      color: #856404;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 1px solid #ffeeba;
+    }
+    .booking-form {
+      background: #e9f5ff;
+      padding: 30px;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 10px;
+    }
+    .booking-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #004080;
+    }
+    .booking-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .booking-form input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .booking-form button {
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .booking-form button:hover { background-color: #0066cc; }
+    footer {
+      background: #f0f0f0;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #004080;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+    }
+    #whatsapp-float {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      font-size: 24px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 50%;
+      z-index: 999;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    #whatsapp-float:hover { transform: scale(1.1); }
     .scroll-animate {
       opacity: 0;
       transform: translateY(30px);
@@ -22,163 +104,149 @@
 
   <header>
     <img src="assets/img/logo.png" alt="ExcellenceQuest Logo" />
-    <h1 id="main-title">شركة ExcellenceQuest للاستشارات</h1>
-    <p id="subtitle">نحن شركاؤكم في تحقيق التميز المؤسسي</p>
+    <h1 data-i18n="mainTitle">شركة ExcellenceQuest للاستشارات</h1>
+    <p data-i18n="subtitle">نحن شركاؤكم في تحقيق التميز المؤسسي</p>
   </header>
 
-  <div class="top-alert" id="top-alert">
-    🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!
-  </div>
+  <div class="top-alert" data-i18n="alert">🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!</div>
 
   <nav>
-    <a href="index.html" id="nav-home">الرئيسية</a>
-    <a href="about.html" id="nav-about">من نحن</a>
-    <a href="services.html" id="nav-services">الخدمات</a>
-    <a href="self-assessment.html" id="nav-assess">التقييم الذاتي</a>
-    <a href="why-us.html" id="nav-why">لماذا نحن؟</a>
-    <a href="blog.html" id="nav-blog">المدونة</a>
-    <a href="contact.html" id="nav-contact">اتصل بنا</a>
+    <a href="index.html" data-i18n="navHome">الرئيسية</a>
+    <a href="about.html" data-i18n="navAbout">من نحن</a>
+    <a href="services.html" data-i18n="navServices">الخدمات</a>
+    <a href="self-assessment.html" data-i18n="navAssess">التقييم الذاتي</a>
+    <a href="why-us.html" data-i18n="navWhy">لماذا نحن؟</a>
+    <a href="blog.html" data-i18n="navBlog">المدونة</a>
+    <a href="faq.html" data-i18n="navFaq">الأسئلة الشائعة</a>
+    <a href="contact.html" data-i18n="navContact">اتصل بنا</a>
     <button id="lang-btn">English</button>
   </nav>
 
   <section class="scroll-animate" id="about-content"></section>
 
   <section class="booking-form scroll-animate">
-    <h2 id="book-title">احجز استشارتك المجانية الآن</h2>
+    <h2 data-i18n="bookTitle">احجز استشارتك المجانية الآن</h2>
     <form>
-      <input type="text" name="name" id="input-name" placeholder="الاسم الكامل" required />
+      <input type="text" name="name" data-i18n-placeholder="inputName" required />
       <input type="email" name="email" placeholder="البريد الإلكتروني" required />
       <input type="tel" name="phone" placeholder="رقم الهاتف (اختياري)" />
-      <button type="submit" id="book-btn">احجز الآن</button>
+      <button type="submit" data-i18n="bookBtn">احجز الآن</button>
     </form>
   </section>
 
   <footer>
-    © 2025 ExcellenceQuest Consultancy – <span id="rights">جميع الحقوق محفوظة</span>
+    © 2025 ExcellenceQuest Consultancy – <span data-i18n="rights">جميع الحقوق محفوظة</span>
     <br />
     <a href="#">سياسة الخصوصية</a> |
     <a href="#">خريطة الموقع</a> |
-    <a href="https://wa.me/96890171958" target="_blank"><i class="fab fa-whatsapp"></i> <span id="wa">تواصل واتساب</span></a>
+    <a href="https://wa.me/96890171958" target="_blank">
+      <i class="fab fa-whatsapp"></i> <span data-i18n="whatsapp">تواصل واتساب</span>
+    </a>
   </footer>
 
+  <a href="#" id="whatsapp-float" title="واتساب"><i class="fab fa-whatsapp"></i></a>
   <button onclick="topFunction()" id="backToTop" title="العودة للأعلى">↑</button>
 
   <script>
     const translations = {
-      ar: {
-        title: "من نحن | ExcellenceQuest",
-        main: "شركة ExcellenceQuest للاستشارات",
-        subtitle: "نحن شركاؤكم في تحقيق التميز المؤسسي",
-        nav: ["الرئيسية", "من نحن", "الخدمات", "التقييم الذاتي", "لماذا نحن؟", "المدونة", "اتصل بنا"],
-        alert: "🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!",
-        content: `
-          <h2>من نحن</h2>
-          <p>ExcellenceQuest هي شركة استشارات متخصصة في الجودة والاعتماد والتحسين الإداري. نعمل مع المؤسسات الصحية والخدمية لتطوير الأداء، وتطبيق المعايير الدولية، وتحقيق التميز المؤسسي.</p>
-          <p>يتميز فريقنا بخبرة واسعة في الأنظمة المحلية مثل OSAHI، والمعايير العالمية مثل ISO وCAP. نقدم حلولاً مخصصة، تدريب احترافي، واستشارات عن بُعد تلبي احتياجات كل مؤسسة على حدة.</p>
-          <h3>رؤيتنا</h3>
-          <p>أن نكون الخيار الأول في الاستشارات الصحية والإدارية على مستوى الخليج العربي.</p>
-          <h3>رسالتنا</h3>
-          <p>تمكين المؤسسات من التميز والتحسين المستمر من خلال حلول مبتكرة وموثوقة.</p>
-          <h3>قيمنا</h3>
-          <ul>
-            <li><i class="fas fa-star"></i> الجودة والاحتراف</li>
-            <li><i class="fas fa-handshake"></i> الشراكة والثقة</li>
-            <li><i class="fas fa-lightbulb"></i> الابتكار والتحسين</li>
-          </ul>
-        `,
-        bookTitle: "احجز استشارتك المجانية الآن",
-        bookBtn: "احجز الآن",
-        inputName: "الاسم الكامل",
-        rights: "جميع الحقوق محفوظة",
-        whatsapp: "تواصل واتساب",
-        lang: "English"
-      },
-      en: {
-        title: "About Us | ExcellenceQuest",
-        main: "ExcellenceQuest Consultancy",
-        subtitle: "Your Partner in Achieving Institutional Excellence",
-        nav: ["Home", "About Us", "Services", "Self Assessment", "Why Us", "Blog", "Contact"],
-        alert: "🎉 Free OSAHI consultancy for the first 3 clients this month!",
-        content: `
-          <h2>Who We Are</h2>
-          <p>ExcellenceQuest is a consultancy company specializing in quality, accreditation, and administrative improvement. We partner with healthcare and service institutions to enhance performance, implement international standards, and achieve organizational excellence.</p>
-          <p>Our team has extensive experience in local systems such as OSAHI and international standards like ISO and CAP. We offer tailored solutions, professional training, and remote consultancy services to meet each organization's unique needs.</p>
-          <h3>Our Vision</h3>
-          <p>To be the first choice in health and administrative consultancy across the Gulf region.</p>
-          <h3>Our Mission</h3>
-          <p>Empowering institutions to achieve continuous improvement through innovative and reliable solutions.</p>
-          <h3>Our Values</h3>
-          <ul>
-            <li><i class="fas fa-star"></i> Quality & Professionalism</li>
-            <li><i class="fas fa-handshake"></i> Partnership & Trust</li>
-            <li><i class="fas fa-lightbulb"></i> Innovation & Improvement</li>
-          </ul>
-        `,
-        bookTitle: "Book Your Free Consultation",
-        bookBtn: "Book Now",
-        inputName: "Full Name",
-        rights: "All rights reserved",
-        whatsapp: "WhatsApp Contact",
-        lang: "العربية"
-      }
-    };
-
-    let lang = localStorage.getItem("lang") || "ar";
-    function applyLang(l) {
-      const t = translations[l];
-      document.documentElement.lang = l;
-      document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
-      document.getElementById("page-title").textContent = t.title;
-      document.getElementById("main-title").textContent = t.main;
-      document.getElementById("subtitle").textContent = t.subtitle;
-      document.getElementById("nav-home").textContent = t.nav[0];
-      document.getElementById("nav-about").textContent = t.nav[1];
-      document.getElementById("nav-services").textContent = t.nav[2];
-      document.getElementById("nav-assess").textContent = t.nav[3];
-      document.getElementById("nav-why").textContent = t.nav[4];
-      document.getElementById("nav-blog").textContent = t.nav[5];
-      document.getElementById("nav-contact").textContent = t.nav[6];
-      document.getElementById("top-alert").textContent = t.alert;
-      document.getElementById("about-content").innerHTML = t.content;
-      document.getElementById("book-title").textContent = t.bookTitle;
-      document.getElementById("book-btn").textContent = t.bookBtn;
-      document.getElementById("input-name").placeholder = t.inputName;
-      document.getElementById("rights").textContent = t.rights;
-      document.getElementById("wa").textContent = t.whatsapp;
-      document.getElementById("lang-btn").textContent = t.lang;
-    }
-
-    applyLang(lang);
-
-    document.getElementById("lang-btn").addEventListener("click", () => {
-      lang = lang === "ar" ? "en" : "ar";
-      localStorage.setItem("lang", lang);
-      applyLang(lang);
-    });
-
-    window.onscroll = function () {
-      const btn = document.getElementById("backToTop");
-      if (btn) {
-        btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
-          ? "block"
-          : "none";
-      }
-    };
-
+  title: {
+    ar: "من نحن | ExcellenceQuest",
+    en: "About Us | ExcellenceQuest"
+  },
+  mainTitle: {
+    ar: "شركة ExcellenceQuest للاستشارات",
+    en: "ExcellenceQuest Consultancy"
+  },
+  subtitle: {
+    ar: "نحن شركاؤكم في تحقيق التميز المؤسسي",
+    en: "Your Partner in Achieving Institutional Excellence"
+  },
+  alert: {
+    ar: "🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!",
+    en: "🎉 Free OSAHI consultancy for the first 3 clients this month!"
+  },
+  navHome: { ar: "الرئيسية", en: "Home" },
+  navAbout: { ar: "من نحن", en: "About Us" },
+  navServices: { ar: "الخدمات", en: "Services" },
+  navAssess: { ar: "التقييم الذاتي", en: "Self Assessment" },
+  navWhy: { ar: "لماذا نحن؟", en: "Why Us" },
+  navBlog: { ar: "المدونة", en: "Blog" },
+  navFaq: { ar: "الأسئلة الشائعة", en: "FAQ" },
+  navContact: { ar: "اتصل بنا", en: "Contact" },
+  bookTitle: { ar: "احجز استشارتك المجانية الآن", en: "Book Your Free Consultation" },
+  bookBtn: { ar: "احجز الآن", en: "Book Now" },
+  inputName: { ar: "الاسم الكامل", en: "Full Name" },
+  rights: { ar: "جميع الحقوق محفوظة", en: "All rights reserved" },
+  whatsapp: { ar: "تواصل واتساب", en: "WhatsApp Contact" },
+  aboutContent: {
+    ar: `
+      <h2>من نحن</h2>
+      <p>ExcellenceQuest هي شركة استشارات متخصصة في الجودة والاعتماد والتحسين الإداري...</p>
+      <h3>رؤيتنا</h3><p>أن نكون الخيار الأول في الاستشارات الصحية والإدارية على مستوى الخليج العربي.</p>
+      <h3>رسالتنا</h3><p>تمكين المؤسسات من التميز والتحسين المستمر من خلال حلول مبتكرة وموثوقة.</p>
+      <h3>قيمنا</h3><ul><li><i class="fas fa-star"></i> الجودة والاحتراف</li><li><i class="fas fa-handshake"></i> الشراكة والثقة</li><li><i class="fas fa-lightbulb"></i> الابتكار والتحسين</li></ul>
+    `,
+    en: `
+      <h2>Who We Are</h2>
+      <p>ExcellenceQuest is a consultancy company specializing in quality, accreditation, and administrative improvement...</p>
+      <h3>Our Vision</h3><p>To be the first choice in health and administrative consultancy across the Gulf region.</p>
+      <h3>Our Mission</h3><p>Empowering institutions to achieve continuous improvement through innovative and reliable solutions.</p>
+      <h3>Our Values</h3><ul><li><i class="fas fa-star"></i> Quality & Professionalism</li><li><i class="fas fa-handshake"></i> Partnership & Trust</li><li><i class="fas fa-lightbulb"></i> Innovation & Improvement</li></ul>
+    `
+  }
+};
     function topFunction() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
+    document.addEventListener("DOMContentLoaded", () => {
+      const lang = localStorage.getItem("lang") || "ar";
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[key]) el.innerHTML = translations[key][lang];
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (translations[key]) el.setAttribute("placeholder", translations[key][lang]);
+      });
+
+      document.title = translations.title[lang];
+      document.getElementById("lang-btn").textContent = lang === "ar" ? "English" : "العربية";
+
+      const content = document.getElementById("about-content");
+      if (content) content.innerHTML = translations.aboutContent[lang];
+
+      const waText = lang === "ar"
+        ? "مرحبًا، أود الحصول على استشارة مجانية من ExcellenceQuest"
+        : "Hello, I would like a free consultation from ExcellenceQuest";
+      const waBtn = document.getElementById("whatsapp-float");
+      if (waBtn) waBtn.href = `https://wa.me/96890171958?text=${encodeURIComponent(waText)}`;
+    });
+
+    document.getElementById("lang-btn").addEventListener("click", () => {
+      const lang = document.documentElement.lang === "ar" ? "en" : "ar";
+      localStorage.setItem("lang", lang);
+      location.reload();
+    });
+
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTop");
+      btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
+    };
+
     document.addEventListener("DOMContentLoaded", function () {
       const elements = document.querySelectorAll(".scroll-animate");
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) entry.target.classList.add("show");
         });
       });
-      elements.forEach((el) => observer.observe(el));
+      elements.forEach(el => observer.observe(el));
     });
   </script>
-
 </body>
 </html>

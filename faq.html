@@ -3,16 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>الأسئلة الشائعة | ExcellenceQuest</title>
+  <title data-i18n="title">الأسئلة الشائعة | ExcellenceQuest</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script defer src="assets/js/lang.js"></script>
   <style>
+    body { background: #f5f8fc; margin: 0; font-family: Arial, sans-serif; }
+    header {
+      background-color: #0b3c5d;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+    }
+    header img {
+      max-width: 120px;
+      margin-bottom: 10px;
+    }
+    header h1 { margin: 10px 0 5px; font-size: 24px; }
+    header p { margin: 0; font-size: 16px; }
+    .top-alert {
+      background: #fff3cd;
+      color: #856404;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 1px solid #ffeeba;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    #lang-btn {
+      background: #004080;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
     .faq-container {
       max-width: 900px;
       margin: 40px auto;
       padding: 20px;
-      background: #fff;
+      background: white;
       border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     .faq-item {
       border-bottom: 1px solid #ddd;
@@ -24,6 +63,7 @@
       color: #004080;
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
     .faq-answer {
       display: none;
@@ -33,64 +73,115 @@
     .faq-answer.show {
       display: block;
     }
+    footer {
+      background: #f0f0f0;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #004080;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+    }
+    #whatsapp-float {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      font-size: 24px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 50%;
+      z-index: 999;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    #whatsapp-float:hover { transform: scale(1.1); }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="assets/img/logo.png" alt="ExcellenceQuest Logo" />
-  <h1 id="page-title">الأسئلة الشائعة</h1>
-  <p id="subtitle">إجابات لأهم استفساراتكم</p>
-</header>
+  <header>
+    <img src="assets/img/logo.png" alt="ExcellenceQuest Logo" />
+    <h1 data-i18n="faqTitle">الأسئلة الشائعة</h1>
+    <p data-i18n="faqSubtitle">إجابات لأهم استفساراتكم</p>
+  </header>
 
-<nav>
-  <a href="index.html" id="nav-home">الرئيسية</a>
-  <a href="about.html" id="nav-about">من نحن</a>
-  <a href="services.html" id="nav-services">الخدمات</a>
-  <a href="self-assessment.html" id="nav-assess">التقييم الذاتي</a>
-  <a href="why-us.html" id="nav-why">لماذا نحن؟</a>
-  <a href="blog.html" id="nav-blog">المدونة</a>
-  <a href="faq.html" id="nav-faq">الأسئلة الشائعة</a>
-  <a href="contact.html" id="nav-contact">اتصل بنا</a>
-  <button id="lang-btn">English</button>
-</nav>
+  <div class="top-alert" data-i18n="alert">🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!</div>
 
-<section class="faq-container">
-  <div class="faq-item">
-    <div class="faq-question">ما هي خدمات ExcellenceQuest؟ <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">نحن نقدم استشارات جودة، اعتماد، تقييم ذاتي، تطوير إداري، وتدريب عن بُعد للمؤسسات الصحية والخدمية.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-question">هل الاستشارة الأولى مجانية؟ <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">نعم، أول استشارة مجانية لأول 3 عملاء كل شهر.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-question">هل تدعمون المعايير المحلية مثل OSAHI؟ <i class="fas fa-chevron-down"></i></div>
-    <div class="faq-answer">نعم، ندعم OSAHI، CBAHI، وISO، بالإضافة إلى CAP للمختبرات.</div>
-  </div>
-</section>
+  <nav>
+    <a href="index.html" data-i18n="navHome">الرئيسية</a>
+    <a href="about.html" data-i18n="navAbout">من نحن</a>
+    <a href="services.html" data-i18n="navServices">الخدمات</a>
+    <a href="self-assessment.html" data-i18n="navAssess">التقييم الذاتي</a>
+    <a href="why-us.html" data-i18n="navWhy">لماذا نحن؟</a>
+    <a href="blog.html" data-i18n="navBlog">المدونة</a>
+    <a href="faq.html" data-i18n="navFaq">الأسئلة الشائعة</a>
+    <a href="contact.html" data-i18n="navContact">اتصل بنا</a>
+    <button id="lang-btn">English</button>
+  </nav>
 
-<footer>
-  © 2025 ExcellenceQuest Consultancy – جميع الحقوق محفوظة
-</footer>
+  <section class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question" data-i18n="q1">ما هي خدمات ExcellenceQuest؟ <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer" data-i18n="a1">نحن نقدم استشارات جودة، اعتماد، تقييم ذاتي، تطوير إداري، وتدريب عن بُعد للمؤسسات الصحية والخدمية.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" data-i18n="q2">هل الاستشارة الأولى مجانية؟ <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer" data-i18n="a2">نعم، أول استشارة مجانية لأول 3 عملاء كل شهر.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" data-i18n="q3">هل تدعمون المعايير المحلية مثل OSAHI؟ <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer" data-i18n="a3">نعم، ندعم OSAHI، CBAHI، وISO، بالإضافة إلى CAP للمختبرات.</div>
+    </div>
+  </section>
 
-<script>
-  document.querySelectorAll('.faq-question').forEach(q => {
-    q.addEventListener('click', () => {
-      const answer = q.nextElementSibling;
-      answer.classList.toggle('show');
-      q.querySelector('i').classList.toggle('fa-chevron-down');
-      q.querySelector('i').classList.toggle('fa-chevron-up');
+  <footer>
+    © 2025 ExcellenceQuest Consultancy – <span data-i18n="rights">جميع الحقوق محفوظة</span>
+    <br />
+    <a href="#">سياسة الخصوصية</a> |
+    <a href="#">خريطة الموقع</a> |
+    <a href="https://wa.me/96890171958" target="_blank">
+      <i class="fab fa-whatsapp"></i> <span data-i18n="wa">تواصل واتساب</span>
+    </a>
+  </footer>
+
+  <a href="https://wa.me/96890171958" target="_blank" id="whatsapp-float" title="تواصل عبر واتساب">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="backToTop" title="العودة للأعلى">↑</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".faq-question").forEach(q => {
+        q.addEventListener("click", () => {
+          const answer = q.nextElementSibling;
+          answer.classList.toggle("show");
+          q.querySelector("i").classList.toggle("fa-chevron-down");
+          q.querySelector("i").classList.toggle("fa-chevron-up");
+        });
+      });
+
+      window.onscroll = () => {
+        const btn = document.getElementById("backToTop");
+        btn.style.display = window.scrollY > 300 ? "block" : "none";
+      };
     });
-  });
-
-  // زر اللغة
-  const langBtn = document.getElementById("lang-btn");
-  langBtn.onclick = () => {
-    const isAr = document.documentElement.lang === "ar";
-    window.location.href = isAr ? "faq-en.html" : "faq.html";
-  };
-</script>
-
+  </script>
 </body>
 </html>

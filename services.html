@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -6,6 +6,119 @@
   <title id="page-title">الخدمات | ExcellenceQuest</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body { background: #f5f8fc; margin: 0; font-family: Arial, sans-serif; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0; }
+    .top-alert {
+      background: #fff3cd;
+      color: #856404;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 1px solid #ffeeba;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .service {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .service:hover { transform: scale(1.03); }
+    .service h3 {
+      margin-top: 0;
+      color: #004080;
+      font-size: 18px;
+    }
+    .service i { margin-left: 8px; }
+    .service ul {
+      list-style: disc inside;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+    .booking-form {
+      background: #e9f5ff;
+      padding: 30px;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 10px;
+    }
+    .booking-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #004080;
+    }
+    .booking-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .booking-form input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .booking-form button {
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background-color: #0066cc;
+    }
+    footer {
+      background: #f0f0f0;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #004080;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+    }
+    #whatsapp-float {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      font-size: 24px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 50%;
+      z-index: 999;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    #whatsapp-float:hover { transform: scale(1.1); }
+    .scroll-animate { opacity: 0; transform: translateY(30px); transition: all 0.7s ease-in-out; }
+    .scroll-animate.show { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
 <body>
 
@@ -29,7 +142,7 @@
   </nav>
 
   <section class="scroll-animate">
-    <h2 id="services-title">خدماتنا</h2>
+    <h2 id="services-title" style="text-align:center; color:#004080;">خدماتنا</h2>
     <div class="services" id="services-list"></div>
   </section>
 
@@ -44,13 +157,13 @@
   </section>
 
   <footer>
-    © 2025 ExcellenceQuest Consultancy – <span id="rights">جميع الحقوق محفوظة</span>
-    <br />
+    © 2025 ExcellenceQuest Consultancy – <span id="rights">جميع الحقوق محفوظة</span><br />
     <a href="#">سياسة الخصوصية</a> |
     <a href="#">خريطة الموقع</a> |
     <a href="https://wa.me/96890171958" target="_blank"><i class="fab fa-whatsapp"></i> <span id="wa">تواصل واتساب</span></a>
   </footer>
 
+  <a href="#" id="whatsapp-float" title="واتساب"><i class="fab fa-whatsapp"></i></a>
   <button onclick="topFunction()" id="backToTop" title="العودة للأعلى">↑</button>
 
 <script>
@@ -68,6 +181,7 @@ const translations = {
     rights: "جميع الحقوق محفوظة",
     whatsapp: "تواصل واتساب",
     lang: "English",
+    waMsg: "مرحبًا، أود حجز استشارة عبر ExcellenceQuest",
     services: [
       {
         title: "الاعتماد والتقييم",
@@ -104,6 +218,7 @@ const translations = {
     rights: "All rights reserved",
     whatsapp: "WhatsApp Contact",
     lang: "العربية",
+    waMsg: "Hello, I’d like to book a consultation via ExcellenceQuest",
     services: [
       {
         title: "Accreditation & Evaluation",
@@ -137,13 +252,9 @@ function applyLang(l) {
   document.getElementById("page-title").textContent = t.title;
   document.getElementById("main-title").textContent = t.main;
   document.getElementById("subtitle").textContent = t.subtitle;
-  document.getElementById("nav-home").textContent = t.nav[0];
-  document.getElementById("nav-about").textContent = t.nav[1];
-  document.getElementById("nav-services").textContent = t.nav[2];
-  document.getElementById("nav-assess").textContent = t.nav[3];
-  document.getElementById("nav-why").textContent = t.nav[4];
-  document.getElementById("nav-blog").textContent = t.nav[5];
-  document.getElementById("nav-contact").textContent = t.nav[6];
+  ["nav-home","nav-about","nav-services","nav-assess","nav-why","nav-blog","nav-contact"].forEach((id, i) => {
+    document.getElementById(id).textContent = t.nav[i];
+  });
   document.getElementById("top-alert").textContent = t.alert;
   document.getElementById("services-title").textContent = t.servicesTitle;
   document.getElementById("book-title").textContent = t.bookTitle;
@@ -152,8 +263,7 @@ function applyLang(l) {
   document.getElementById("rights").textContent = t.rights;
   document.getElementById("wa").textContent = t.whatsapp;
   document.getElementById("lang-btn").textContent = t.lang;
-
-  // الخدمات
+  document.getElementById("whatsapp-float").href = `https://wa.me/96890171958?text=${encodeURIComponent(t.waMsg)}`;
   const container = document.getElementById("services-list");
   container.innerHTML = "";
   t.services.forEach(s => {
@@ -163,37 +273,26 @@ function applyLang(l) {
     container.appendChild(div);
   });
 }
-
 applyLang(lang);
-
 document.getElementById("lang-btn").addEventListener("click", () => {
   lang = lang === "ar" ? "en" : "ar";
   localStorage.setItem("lang", lang);
   applyLang(lang);
 });
-
 window.onscroll = function () {
   const btn = document.getElementById("backToTop");
-  if (!btn) return;
-  btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
-    ? "block"
-    : "none";
+  btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
 };
-function topFunction() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
+function topFunction() { window.scrollTo({ top: 0, behavior: "smooth" }); }
 document.addEventListener("DOMContentLoaded", function () {
   const elements = document.querySelectorAll(".scroll-animate");
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
+      if (entry.isIntersecting) entry.target.classList.add("show");
     });
   });
   elements.forEach(el => observer.observe(el));
 });
 </script>
-
 </body>
 </html>

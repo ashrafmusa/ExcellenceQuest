@@ -1,7 +1,28 @@
 [
   {
     "id": "001",
-    "title": "5 خطوات لتأهيل منشأتك للاعتماد الصحي",
-    "description": "في هذا المقال نوضح لك الخطوات الأساسية التي تضمن استعداد منشأتك للحصول على الاعتماد المؤسسي."
+    "title": {
+      "ar": "كيف تبدأ مشروع استشاري ناجح؟",
+      "en": "How to Start a Successful Consulting Business?"
+    },
+    "date": "2025-06-17",
+    "cover": "assets/img/blog1.jpg",
+    "excerpt": {
+      "ar": "في هذا المقال نقدم خطوات عملية لتأسيس مشروع استشاري احترافي في الخليج.",
+      "en": "This article provides practical steps for launching a successful consulting business in the Gulf."
+    }
+  },
+  {
+    "id": "002",
+    "title": {
+      "ar": "أهم أدوات التحسين المؤسسي في 2025",
+      "en": "Top Organizational Improvement Tools in 2025"
+    },
+    "date": "2025-06-18",
+    "cover": "assets/img/blog2.jpg",
+    "excerpt": {
+      "ar": "نستعرض أهم الأدوات الذكية التي تعزز الأداء المؤسسي وتحقيق الاعتماد.",
+      "en": "We explore key smart tools that enhance institutional performance and accreditation."
+    }
   }
 ]

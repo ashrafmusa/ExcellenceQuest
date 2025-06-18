@@ -1,7 +1,11 @@
 {
-  "id": "001",
-  "title": "5 خطوات لتأهيل منشأتك للاعتماد الصحي",
-  "description": "في هذا المقال نوضح لك الخطوات الأساسية التي تضمن استعداد منشأتك للحصول على الاعتماد المؤسسي.",
-  "content": "<p>الخطوة 1: تحليل الفجوات الحالية.</p><p>الخطوة 2: مراجعة السياسات.</p><p>الخطوة 3: تدريب الفريق.</p><p>الخطوة 4: تنفيذ خطط التحسين.</p><p>الخطوة 5: التقييم الذاتي والاستعداد للمراجعة الخارجية.</p>",
-  "date": "2025-06-17"
+  "title": {
+    "ar": "6 خطوات لنجاح الاعتماد الصحي في مؤسستك",
+    "en": "6 Steps to Achieve Successful Health Accreditation"
+  },
+  "date": "2025-06-19",
+  "content": {
+    "ar": "<p>تحقيق الاعتماد الصحي ليس مجرد التزام تنظيمي، بل رحلة نحو التميز المؤسسي. في ExcellenceQuest، نساعدكم على اجتياز هذه الرحلة بخطى ثابتة:</p><ul><li><strong>1. التقييم الأولي:</strong> تحليل الفجوات بين الوضع الحالي ومتطلبات المعايير.</li><li><strong>2. إعداد خطة عمل:</strong> تصميم خطة زمنية محكمة تشمل الأولويات والمسؤوليات.</li><li><strong>3. تدريب الكوادر:</strong> تقديم برامج تدريبية داخلية مخصصة لكل قسم.</li><li><strong>4. تفعيل الأدوات الذكية:</strong> استخدام لوحات مؤشرات، قوائم تدقيق، وحلول WISN.</li><li><strong>5. المتابعة والتحسين:</strong> جلسات مراجعة دورية لضمان التحسن المستمر.</li><li><strong>6. المحاكاة والتقييم النهائي:</strong> إجراء تقييم شامل قبل زيارة جهة الاعتماد.</li></ul><p>من خلال هذه الخطوات، نضمن لكم تجربة اعتماد ناجحة ومستدامة. ExcellenceQuest هي شريككم نحو الجودة والتميز.</p>",
+    "en": "<p>Achieving health accreditation is more than regulatory compliance — it's a pathway to institutional excellence. At ExcellenceQuest, we guide you through this journey in 6 structured steps:</p><ul><li><strong>1. Initial Assessment:</strong> Identify gaps between current practices and accreditation standards.</li><li><strong>2. Action Planning:</strong> Develop a realistic roadmap with priorities and responsibilities.</li><li><strong>3. Staff Training:</strong> Deliver department-specific training tailored to your needs.</li><li><strong>4. Smart Tools Activation:</strong> Use dashboards, audit checklists, and WISN calculators.</li><li><strong>5. Monitoring & Improvement:</strong> Run periodic review sessions to ensure continuous improvement.</li><li><strong>6. Mock Survey & Final Review:</strong> Conduct a full-scale readiness assessment before the official visit.</li></ul><p>With these steps, we ensure your success and sustainability in accreditation. ExcellenceQuest is your partner in achieving quality and excellence.</p>"
+  }
 }

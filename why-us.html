@@ -7,14 +7,78 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    /* تم تجميع التنسيق داخل <style> للحفاظ على التنظيم الذكي */
+    body { background: #f7f9fc; font-family: Arial, sans-serif; margin: 0; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 20px 0; }
+    .top-alert {
+      background: #fff3cd;
+      color: #856404;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 1px solid #ffeeba;
+    }
+    #content {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #content h2 { color: #004080; text-align: center; margin-bottom: 20px; }
+    #content ul { list-style: disc inside; padding: 0; }
+    #content li { margin: 10px 0; line-height: 1.8; }
+    #content p { margin-top: 20px; font-weight: bold; text-align: center; color: #333; }
+
+    .booking-form {
+      background: #e9f5ff;
+      padding: 30px;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 10px;
+    }
+    .booking-form h2 { text-align: center; color: #004080; margin-bottom: 20px; }
+    .booking-form form { display: flex; flex-direction: column; gap: 15px; }
+    .booking-form input {
+      padding: 10px; border: 1px solid #ccc; border-radius: 5px;
+    }
+    .booking-form button {
+      background-color: #004080;
+      color: white; border: none; padding: 12px;
+      border-radius: 5px; font-weight: bold; cursor: pointer;
+    }
+    .booking-form button:hover { background-color: #0066cc; }
+
+    footer {
+      background: #f0f0f0; text-align: center;
+      padding: 20px; font-size: 14px;
+    }
+
+    #backToTop, #whatsapp-float {
+      position: fixed; right: 20px; z-index: 999;
+      border-radius: 50%;
+    }
+    #backToTop {
+      bottom: 20px; background: #004080;
+      color: white; border: none; width: 40px; height: 40px;
+      font-size: 20px; cursor: pointer; display: none;
+    }
+    #whatsapp-float {
+      bottom: 80px; background-color: #25D366;
+      color: white; font-size: 24px;
+      width: 50px; height: 50px; line-height: 50px;
+      text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    #whatsapp-float:hover { transform: scale(1.1); }
+
     .scroll-animate {
-      opacity: 0;
-      transform: translateY(30px);
+      opacity: 0; transform: translateY(30px);
       transition: all 0.7s ease-in-out;
     }
     .scroll-animate.show {
-      opacity: 1;
-      transform: translateY(0);
+      opacity: 1; transform: translateY(0);
     }
   </style>
 </head>
@@ -29,38 +93,40 @@
   <div class="top-alert" id="top-alert">🎉 الآن نقدم استشارات OSAHI مجانًا لأول 3 عملاء هذا الشهر!</div>
 
   <nav>
-    <a href="index.html" id="nav-home">الرئيسية</a>
-    <a href="about.html" id="nav-about">من نحن</a>
-    <a href="services.html" id="nav-services">الخدمات</a>
-    <a href="self-assessment.html" id="nav-assess">التقييم الذاتي</a>
-    <a href="why-us.html" id="nav-why">لماذا نحن؟</a>
-    <a href="blog.html" id="nav-blog">المدونة</a>
-    <a href="contact.html" id="nav-contact">اتصل بنا</a>
+    <a href="index.html" id="nav-0">الرئيسية</a>
+    <a href="about.html" id="nav-1">من نحن</a>
+    <a href="services.html" id="nav-2">الخدمات</a>
+    <a href="self-assessment.html" id="nav-3">التقييم الذاتي</a>
+    <a href="why-us.html" id="nav-4">لماذا نحن؟</a>
+    <a href="blog.html" id="nav-5">المدونة</a>
+    <a href="contact.html" id="nav-6">اتصل بنا</a>
     <button id="lang-btn">English</button>
   </nav>
 
-  <section class="scroll-animate" id="content">
-    <!-- سيتم توليده تلقائيًا عبر JavaScript -->
-  </section>
+  <section class="scroll-animate" id="content"></section>
 
   <section class="booking-form scroll-animate">
     <h2 id="book-title">احجز استشارتك المجانية الآن</h2>
     <form>
-      <input type="text" name="name" id="input-name" placeholder="الاسم الكامل" required />
-      <input type="email" name="email" placeholder="البريد الإلكتروني" required />
-      <input type="tel" name="phone" placeholder="رقم الهاتف (اختياري)" />
+      <input type="text" id="input-name" placeholder="الاسم الكامل" required />
+      <input type="email" placeholder="البريد الإلكتروني" required />
+      <input type="tel" placeholder="رقم الهاتف (اختياري)" />
       <button type="submit" id="book-btn">احجز الآن</button>
     </form>
   </section>
 
   <footer>
-    © 2025 ExcellenceQuest Consultancy – <span id="rights">جميع الحقوق محفوظة</span>
-    <br />
+    © 2025 ExcellenceQuest Consultancy – <span id="rights">جميع الحقوق محفوظة</span><br />
     <a href="#">سياسة الخصوصية</a> |
     <a href="#">خريطة الموقع</a> |
-    <a href="https://wa.me/96890171958" target="_blank"><i class="fab fa-whatsapp"></i> <span id="wa">تواصل واتساب</span></a>
+    <a href="https://wa.me/96890171958" target="_blank">
+      <i class="fab fa-whatsapp"></i> <span id="wa">تواصل واتساب</span>
+    </a>
   </footer>
 
+  <a href="https://wa.me/96890171958" id="whatsapp-float" title="واتساب">
+    <i class="fab fa-whatsapp"></i>
+  </a>
   <button onclick="topFunction()" id="backToTop" title="العودة للأعلى">↑</button>
 
   <script>
@@ -102,11 +168,11 @@
             <li><strong>Bilingual Consulting:</strong> We serve in Arabic & English, remotely & cost-effectively.</li>
             <li><strong>Smart Tools:</strong> We offer dashboards, audits, and WISN calculators for performance.</li>
             <li><strong>Dual Expertise:</strong> We combine health accreditation with admin excellence.</li>
-            <li><strong>Lab Specialization:</strong> CAP, LIS, and verification support tailored for labs.</li>
-            <li><strong>Digital Flexibility:</strong> Our services are customizable and scalable.</li>
-            <li><strong>Sustainable Knowledge:</strong> Training, self-assessment, and post-consultation certification.</li>
+            <li><strong>Lab Specialization:</strong> Full support for labs – CAP, LIS, and method verification.</li>
+            <li><strong>Digital Flexibility:</strong> Scalable, customizable online consultancy services.</li>
+            <li><strong>Continuous Knowledge:</strong> Training, self-assessment, and certification post-consulting.</li>
           </ul>
-          <p>At ExcellenceQuest, we don’t offer temporary fixes — we build lasting partnerships toward excellence.</p>
+          <p>At ExcellenceQuest, we don't offer temporary fixes — we build long-term partnerships for excellence.</p>
         `,
         bookTitle: "Book Your Free Consultation",
         bookBtn: "Book Now",
@@ -117,21 +183,25 @@
       }
     };
 
-    let lang = localStorage.getItem("lang") || "ar";
-    function applyLang(l) {
-      const t = translations[l];
-      document.documentElement.lang = l;
-      document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
+    function switchLang() {
+      const lang = document.documentElement.lang === "ar" ? "en" : "ar";
+      localStorage.setItem("lang", lang);
+      location.reload();
+    }
+
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const lang = localStorage.getItem("lang") || "ar";
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+      const t = translations[lang];
       document.getElementById("page-title").textContent = t.title;
       document.getElementById("main-title").textContent = t.main;
       document.getElementById("subtitle").textContent = t.subtitle;
-      document.getElementById("nav-home").textContent = t.nav[0];
-      document.getElementById("nav-about").textContent = t.nav[1];
-      document.getElementById("nav-services").textContent = t.nav[2];
-      document.getElementById("nav-assess").textContent = t.nav[3];
-      document.getElementById("nav-why").textContent = t.nav[4];
-      document.getElementById("nav-blog").textContent = t.nav[5];
-      document.getElementById("nav-contact").textContent = t.nav[6];
       document.getElementById("top-alert").textContent = t.alert;
       document.getElementById("content").innerHTML = t.content;
       document.getElementById("book-title").textContent = t.bookTitle;
@@ -140,36 +210,33 @@
       document.getElementById("rights").textContent = t.rights;
       document.getElementById("wa").textContent = t.whatsapp;
       document.getElementById("lang-btn").textContent = t.lang;
-    }
 
-    applyLang(lang);
+      t.nav.forEach((txt, i) => {
+        const link = document.getElementById(`nav-${i}`);
+        if (link) link.textContent = txt;
+      });
 
-    document.getElementById("lang-btn").addEventListener("click", () => {
-      lang = lang === "ar" ? "en" : "ar";
-      localStorage.setItem("lang", lang);
-      applyLang(lang);
+      const waText = lang === "ar"
+        ? "مرحبًا، أود الحصول على استشارة مجانية من ExcellenceQuest"
+        : "Hello, I would like a free consultation from ExcellenceQuest";
+      document.getElementById("whatsapp-float").href = `https://wa.me/96890171958?text=${encodeURIComponent(waText)}`;
     });
 
     window.onscroll = function () {
       const btn = document.getElementById("backToTop");
-      if (!btn) return;
-      btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
-        ? "block"
-        : "none";
+      btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
     };
-    function topFunction() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const elements = document.querySelectorAll(".scroll-animate");
+    document.addEventListener("DOMContentLoaded", () => {
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) entry.target.classList.add("show");
         });
       });
-      elements.forEach(el => observer.observe(el));
+      document.querySelectorAll(".scroll-animate").forEach(el => observer.observe(el));
     });
+
+    document.getElementById("lang-btn").onclick = switchLang;
   </script>
 
 </body>
